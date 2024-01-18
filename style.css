@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Norse-Bold';
+    src: url(./fonts/Norse-Bold.woff2) format('woff2');
+  }
+
+:root {
+--norse: 'Norse-Bold';
+--gray:  rgb(63, 60, 60);
+} 
+
+* {
+
+    
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+}
+
+body header, body main {
+
+    
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    width: 40%;
+    height: 100vh;
+    background-image: url(./images/halie-west-25xggax4bSA-unsplash.jpg);
+    background-attachment:local;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+}
+
+div.logo-container {
+margin: 15vh 0;
+height: 30vh;
+max-height: 150px;
+padding: 10px;
+background-color: rgba(0, 0, 0, 0.5);
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+img.logo {
+  
+    height: 100%;
+}
+
+img.logo + span::before {
+    content: "Odin";
+    color: whitesmoke;
+    font-size: 4em;
+    font-family: var(--norse);
+}
+
+main {
+    width: 60%;
+    height: 100vh;
+    padding: 0 100px;
+    box-shadow: 10px 0;
+
+    box-shadow: -15px 2px 16px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+main p {
+
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+main > div:first-child {
+margin-top: 10vh;
+
+}
+
+main p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    width: 220px;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto 30px;
+}
+
+form ul {
+    list-style-type: none;
+}
+form li {
+    margin-top: 13px;
+}
+label {
+    display: block;
+    text-transform: uppercase;
+}
+
+form label {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: var(--gray);
+    letter-spacing: 2px;
+}
+
+
+hr {
+
+    width: 75%;
+    margin: 20px auto;
+    
+}
+
+button[type="submit"] {
+    width: fit-content;
+    padding: 11px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #596D48;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+button[type="submit"] ~ p {
+
+    font-size: 1rem;
+    margin-top: 30px;
+    color: var(--gray)
+}
+
+input{
+
+appearance: none;
+border: 1px solid gray;
+border-radius: 4px;
+
+    
+}
+
+input:focus {
+    border-color: blue;
+    box-shadow: 7px 7px 28px 3px rgba(161,152,152,0.75);
+}
+
+input:focus-visible {
+    outline: none   ;
+}
+
+.passw-err {
+border-color: red;
+
+}

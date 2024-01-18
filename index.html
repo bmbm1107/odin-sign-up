@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <div class="logo-container"><img src="./images/odin-lined.png" alt="The logo of the company" class="logo"><span></span>
+    </div>
+</header>
+<main>
+    
+    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolore quibusdam, voluptatibus modi exercitationem, repellat libero iusto cum laudantium et optio temporibus quos tenetur soluta numquam ratione similique beatae repudiandae.</p>
+     <p>You <em>know</em> you want to.</p></div>
+     <p>Lets do this!</p>
+    <form id="sign-on-form">
+        
+        <ul>
+            <li class="field-wrap"><label for="fname">Firstname</label><input type="text" id="fname"></li>
+            <li class="field-wrap"><label for="fname">Email</label><input type="email" id="fname"></li>
+            <li class="field-wrap"><label for="fname">Password</label><input type="password" id="fname"></li>
+            
+            
+        </ul>
+        <ul>
+            <li class="field-wrap"><label for="fname">Last name</label><input type="text" id="fname"></li>
+            <li class="field-wrap"><label for="fname">Phone number</label><input type="text" inputmode="numeric" id="fname"></li>
+            <li class="field-wrap"><label for="fname">Confirm password</label><input type="password" id="fname"></li>
+            
+        </ul>
+ 
+        
+    </form>
+
+
+<hr>
+    <button type="submit" form="sign-on-form">Create Account</button>
+    <p class="login">Already have an account? <a href=".">Log in</a></p>
+
+</main>
+
+<script>
+const fldPass = document.querySelectorAll('input[type="password"]')
+for (i of fldPass) {
+
+    i.addEventListener('change', pswChck  )
+
+    
+}
+
+function pswChck () {
+
+if (fldPass[0].value === fldPass[1].value) {
+
+    console.log('megegyezik')
+
+} else {
+    console.log('nem stimmel')
+
+}
+}
+</script>
+
+</body>
+</html>
