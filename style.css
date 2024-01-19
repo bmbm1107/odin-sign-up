@@ -1,16 +1,17 @@
 @font-face {
     font-family: 'Norse-Bold';
     src: url(./fonts/Norse-Bold.woff2) format('woff2');
-  }
+}
 
 :root {
---norse: 'Norse-Bold';
---gray:  rgb(63, 60, 60);
-} 
+    --norse: 'Norse-Bold';
+    --gray: rgb(63, 60, 60);
+    --green:  #596D48;
+}
 
 * {
 
-    
+
     margin: 0;
     padding: 0;
 }
@@ -19,9 +20,10 @@ body {
     display: flex;
 }
 
-body header, body main {
+body header,
+body main {
 
-    
+
 
     display: flex;
     flex-direction: column;
@@ -32,31 +34,31 @@ header {
     width: 40%;
     height: 100vh;
     background-image: url(./images/halie-west-25xggax4bSA-unsplash.jpg);
-    background-attachment:local;
+    background-attachment: local;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     display: flex;
 }
 
 div.logo-container {
-margin: 15vh 0;
-height: 30vh;
-max-height: 150px;
-padding: 10px;
-background-color: rgba(0, 0, 0, 0.5);
+    margin: 15vh 0;
+    height: 30vh;
+    max-height: 150px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
 
-display: flex;
-align-items: center;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 img.logo {
-  
+
     height: 100%;
 }
 
-img.logo + span::before {
+img.logo+span::before {
     content: "Odin";
     color: whitesmoke;
     font-size: 4em;
@@ -67,7 +69,6 @@ main {
     width: 60%;
     height: 100vh;
     padding: 0 100px;
-    box-shadow: 10px 0;
 
     box-shadow: -15px 2px 16px 4px rgba(0, 0, 0, 0.3);
 
@@ -79,8 +80,8 @@ main p {
     font-weight: bold;
 }
 
-main > div:first-child {
-margin-top: 10vh;
+main>div:first-child {
+    margin-top: 10vh;
 
 }
 
@@ -89,20 +90,46 @@ main p {
     margin-bottom: 20px;
 }
 
+.form-container {
+
+    box-shadow: 0px 0.4px 3px 1px rgba(0, 0, 0, 0.45);
+    margin: 30px -100px;
+
+}
+
+.form-container p {
+    margin: 30px 0 10px 100px;
+}
+
 form {
     display: flex;
+    flex-direction: column;
     width: 220px;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 10px;
     margin: 0 auto 30px;
+    padding-bottom: 20px;
+}
+
+form ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+form p {
+    display: block;
 }
 
 form ul {
     list-style-type: none;
 }
+
 form li {
     margin-top: 13px;
 }
+
 label {
     display: block;
     text-transform: uppercase;
@@ -115,53 +142,173 @@ form label {
     font-weight: bold;
     color: var(--gray);
     letter-spacing: 2px;
+    margin-bottom: 3px;
 }
 
 
-hr {
 
-    width: 75%;
-    margin: 20px auto;
-    
-}
 
 button[type="submit"] {
     width: fit-content;
     padding: 11px 50px;
     border: none;
     border-radius: 5px;
-    background-color: #596D48;
+    background-color: var(--green);
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
-button[type="submit"] ~ p {
+
+
+button[type="submit"]~p {
 
     font-size: 1rem;
     margin-top: 30px;
     color: var(--gray)
 }
 
-input{
+input {
 
-appearance: none;
-border: 1px solid gray;
-border-radius: 4px;
-
-    
+    appearance: none;
+    border: 1px solid gray;
+    border-radius: 4px;
+    height: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 5px 10px;
 }
 
 input:focus {
     border-color: blue;
-    box-shadow: 7px 7px 28px 3px rgba(161,152,152,0.75);
+    box-shadow: 7px 7px 28px 3px rgba(161, 152, 152, 0.75);
 }
 
 input:focus-visible {
-    outline: none   ;
+    outline: none;
 }
 
 .passw-err {
-border-color: red;
+    border-color: red;
+
+}
+
+.passw-err+span::after {
+    font-family: Arial, Helvetica, sans-serif;
+    content: 'Passwords do not match!';
+    position: absolute;
+    margin-top: 1.5px;
+    display: block;
+    color: red;
+    font-size: 0.6rem;
+}
+
+input:invalid {
+
+    border-color: red;
+}
+
+input:invalid + span::after{
+
+    font-family: Arial, Helvetica, sans-serif;
+   
+    position: absolute;
+    margin-top: 1.5px;
+    display: block;
+    color: red;
+    font-size: 0.6rem;
+}
+
+input[type="tel"]:invalid + span::after{
+
+    content: 'Please only use numeric charachters!';
+}
+input[type="email"]:invalid + span::after{
+
+    content: 'Please add a valid email adress!';
+}
+
+a {
+    text-decoration: none;
+    color: var(--green);
+}
+
+@media only screen and (max-width: 600px) {
+   :root {
+    font-size: 12px;
+   }
+   
+    body {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    main,
+    header {
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+          
+    }
+
+    header {
+
+        height: 100vh;
+    }
+
+    div.logo-container {
+        margin: 35vh 0;
+        
+    }
+
+    main {
+        height: fit-content;
+    }    
+    main p {
+        margin:10px 20px;
+        text-align: center;
+    }
+
+    main>div:first-child {
+        margin-top: 30px;
+    
+    }
+
+    .form-container p {
+        margin: 20px;
+        text-align: center;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    form ul {
+flex-direction: column;
+gap: 0px;
+
+    }
+
+    .form-container {
+        width: 100vw;
+        margin: 20px 0px;
+        height: fit-content;
+    }
+
+    .form ul {
+        margin: 10px;    
+    }
+
+    
+    button[type="submit"] {
+       margin: auto;
+    }
+    
+    button[type="submit"]~p {
+        margin: 15px auto;
+}
+
 
 }
